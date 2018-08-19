@@ -1,10 +1,12 @@
--- NOTE
+-- Q&A
+-- What constraints from the domain could not be enforced?
 -- The constrain that each multiple choice question have at least two choices
 -- could not be enforeced since this happened in inserting and
 -- until insertion is finished, there's no way for the database it self
 -- to check if there's more than two choices for each mc question.
 -- If have to be left for the user to enforce that.
 
+-- What constraints that could have been enforced were not enforced? Why not?
 -- The constrain that there's maximum two classes in a room could be enforced
 -- but not in this schema.
 -- In the schema, I enfored a foreign key constrain that each class have an
