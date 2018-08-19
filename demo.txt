@@ -1,0 +1,154 @@
+dbsrv1:~/Desktop/csc343db/A3% psql csc343h-chengz14
+psql (9.5.10)
+Type "help" for help.
+
+csc343h-chengz14=> \i runner.txt
+-- Loading schema and data:
+psql:schema.sql:12: NOTICE:  drop cascades to 22 other objects
+DETAIL:  drop cascades to table quizschema.student
+drop cascades to table quizschema.room
+drop cascades to table quizschema.class
+drop cascades to table quizschema.enrollment
+drop cascades to table quizschema.question_bank
+drop cascades to table quizschema.tf_answer
+drop cascades to table quizschema.mc_c_hint
+drop cascades to table quizschema.mc_answer
+drop cascades to table quizschema.nm_answer
+drop cascades to table quizschema.nm_hint
+drop cascades to table quizschema.quiz
+drop cascades to table quizschema.quiz_question
+drop cascades to table quizschema.quiz_response
+drop cascades to view quizschema.students
+drop cascades to view quizschema.questions
+drop cascades to view quizschema.correct_tf_answer
+drop cascades to view quizschema.correct_mc_answer
+drop cascades to view quizschema.correct_nm_answer
+drop cascades to view quizschema.responses
+drop cascades to view quizschema.correctness
+drop cascades to view quizschema.correct_response
+drop cascades to view quizschema.null_response
+DROP SCHEMA
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+SET
+INSERT 0 6
+INSERT 0 2
+INSERT 0 2
+INSERT 0 6
+INSERT 0 5
+INSERT 0 1
+INSERT 0 11
+INSERT 0 3
+INSERT 0 1
+INSERT 0 3
+INSERT 0 1
+INSERT 0 4
+INSERT 0 20
+-- Query 1:
+SET
+    fullname     | studentnumber
+-----------------+---------------
+ Lena Headey     | 0998801234
+ Peter Dinklage  | 0010784522
+ Emilia Clarke   | 0997733991
+ Kit Harrington  | 5555555555
+ Sophie Turner   | 1111111111
+ Maisie Williams | 2222222222
+(6 rows)
+
+-- Query 2:
+SET
+ questionid |                    questiontext                     | hint_count
+------------+-----------------------------------------------------+------------
+        782 | What do you promise when you take the oath of citi  |          1
+        566 | The Prime Minister, Justin Trudeau, is  Canada's He |
+        601 | During the "Quiet Revolution," Quebec experienced   |          1
+        625 | What is the Underground Railroad?                   |          3
+        790 | During the War of 1812 the Americans burned down t  |          0
+(5 rows)
+
+-- Query 3:
+SET
+psql:q3.sql:3: NOTICE:  view "students" does not exist, skipping
+DROP VIEW
+psql:q3.sql:4: NOTICE:  view "questions" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+ studentnumber |  lastname  | mark
+---------------+------------+------
+ 0998801234    | Headey     |    3
+ 0010784522    | Dinklage   |    8
+ 0997733991    | Clarke     |    5
+ 5555555555    | Harrington |    1
+ 1111111111    | Turner     |    0
+(5 rows)
+
+-- Query 4:
+SET
+psql:q4.sql:3: NOTICE:  drop cascades to 3 other objects
+DETAIL:  drop cascades to view responses
+drop cascades to view mark
+drop cascades to view total_mark
+DROP VIEW
+psql:q4.sql:4: NOTICE:  drop cascades to 3 other objects
+DETAIL:  drop cascades to view correct_tf_answer
+drop cascades to view correct_mc_answer
+drop cascades to view correct_nm_answer
+DROP VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+    sid     | qid |                    questiontext
+------------+-----+----------------------------------------------------
+ 5555555555 | 601 | During the "Quiet Revolution," Quebec experienced
+ 5555555555 | 625 | What is the Underground Railroad?
+ 1111111111 | 601 | During the "Quiet Revolution," Quebec experienced
+ 1111111111 | 566 | The Prime Minister, Justin Trudeau, is  Canada's H
+ 1111111111 | 790 | During the War of 1812 the Americans burned down
+ 1111111111 | 625 | What is the Underground Railroad?
+(6 rows)
+
+-- Query 5:
+SET
+DROP VIEW
+DROP VIEW
+DROP VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+ questionid | correct_count | wrong_count | null_count
+------------+---------------+-------------+------------
+        601 |             2 |           1 |          2
+        566 |             3 |           1 |          1
+        790 |             2 |           2 |          1
+        625 |             2 |           1 |          2
+(4 rows)
+
+csc343h-chengz14=> \q
+dbsrv1:~/Desktop/csc343db/A3%
